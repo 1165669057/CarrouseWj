@@ -12,7 +12,7 @@ interface CarrouseProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTM
     autoTime?:number
     auto?:boolean
 }
-export class Carrouse extends React.Component<CarrouseProps, {}> {
+export default class Carrouse extends React.Component<CarrouseProps, {}> {
     static defaultProps={
         auto:false,
         autoTime:1500
@@ -103,38 +103,15 @@ export class Carrouse extends React.Component<CarrouseProps, {}> {
 
     render() {
         return (
-            <>
             <div style={this.props.style} ref={(obj) => {
                 this.contentObj = obj;
             }} className={this.props.className + " content"}>
                 {this.props.children}
             </div>
-                <button onClick={()=>{
-                    this.xLocation-=5;
-                    this.setMRotationX(this.xLocation);
-                }} style={{margin:"auto"}}>设置X轴</button>
-                <button onClick={()=>{
-                    this.zLocation-=5;
-                    this.setMRotationZ(this.zLocation);
-                }} style={{margin:"auto"}}>设置Z轴</button>
-                <button onClick={()=>{
-                    this.mAngle+=360/5;
-                    this.setMAngle(this.mAngle);
-                }} style={{margin:"auto"}}>设置旋转角度</button>
-
-                <button onClick={()=>{
-                    this.mCarrouselR-=10;
-                    this.setMCarrouselR(this.mCarrouselR);
-                }} style={{margin:"auto"}}>设置旋转半径</button>
-
-                <button onClick={()=>{
-                  this.autoRun();
-                }} style={{margin:"auto"}}>自动旋转</button>
-                </>
         )
     }
 }
-ReactDOM.render(
+/*ReactDOM.render(
     <div style={{display:"flex",flex:1,flexDirection:'column'}}>
         <Carrouse
             mRotationX={-20}
@@ -164,5 +141,5 @@ ReactDOM.render(
     </div>
     ,
     document.getElementById("example")
-);
+);*/
 
