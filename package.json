@@ -1,0 +1,29 @@
+{
+  "name": "CarrouseWj",
+  "version": "1.0.0",
+  "main": "dist/CarrouseWj.js",
+  "author": "wj",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "css-loader": "^3.2.1",
+    "file-loader": "^5.0.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --open"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.149",
+    "webpack-dev-server": "^3.9.0"
+  }
+}

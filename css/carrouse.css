@@ -1,0 +1,23 @@
+html,body,p,ul,ol{
+    margin: 0px;
+    padding: 0px;
+}
+.content{
+    width:100%;
+    background:#0d1a26;
+    height:3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carrousel-child{
+   position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    width:140px;
+    border-radius: 4px;
+    flex-direction: column;
+    transition: 0.2s;
+}

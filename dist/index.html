@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>测试更多</title>
+    <script>
+        var fitRem = function(){
+            var w = document.documentElement.clientWidth
+            w = w > 750 ? 750 : w;
+            document.querySelector('html').style.fontSize= + (w/375)*100 +'px';
+        }
+        fitRem()
+        window.onresize = fitRem;
+    </script>
+</head>
+<body>
+       <div id="example"></div>
+       <script src="../node_modules/react/umd/react.development.js"></script>
+       <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+       <script src="CarrouseWj.js"></script>
+</body>
+</html>
