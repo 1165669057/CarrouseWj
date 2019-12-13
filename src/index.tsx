@@ -12,7 +12,7 @@ interface CarrouseProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTM
     autoTime?:number
     auto?:boolean
 }
-export default class Carrouse extends React.Component<CarrouseProps, {}> {
+class Carrouse extends React.Component<CarrouseProps, {}> {
     static defaultProps={
         auto:false,
         autoTime:1500
@@ -51,7 +51,6 @@ export default class Carrouse extends React.Component<CarrouseProps, {}> {
         this.refreshLayout();
     }
     refreshLayout=()=>{
-
         for (let  i=0;i<this.mCarrouselViews.length;i++){
             this.mCarrouselViews[i].classList.add("carrousel-child");
             let radians =this.mAngle + 180 - i *  360/(this.viewCount);
@@ -68,6 +67,7 @@ export default class Carrouse extends React.Component<CarrouseProps, {}> {
             console.log("translateY"+i,rotationX_y + rotationZ_y);
         }
     }
+
     autoRun=()=>{ //自动旋转
         this.stopAutoRun();
         this.timer=setInterval( ()=> {
@@ -75,11 +75,14 @@ export default class Carrouse extends React.Component<CarrouseProps, {}> {
             this.setMAngle(this.mAngle);
         },this.props.autoTime);
     }
-    stopAutoRun=()=>{
+
+
+    stopAutoRun=()=>{ //取消自动旋转
         if(this.timer){
             clearInterval(this.timer);
         }
     }
+
     setMRotationX=(x:number)=>{ //设置x轴旋转
         this.mRotationX=x;
         this.refreshLayout();
@@ -100,7 +103,6 @@ export default class Carrouse extends React.Component<CarrouseProps, {}> {
     }
     xLocation=0;
     zLocation=0;
-
     render() {
         return (
             <div style={this.props.style} ref={(obj) => {
@@ -111,6 +113,8 @@ export default class Carrouse extends React.Component<CarrouseProps, {}> {
         )
     }
 }
+
+export default Carrouse;
 /*ReactDOM.render(
     <div style={{display:"flex",flex:1,flexDirection:'column'}}>
         <Carrouse

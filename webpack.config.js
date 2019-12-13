@@ -1,21 +1,24 @@
 const path = require("path");
 module.exports = {
-    entry: './src/index.tsx',
+    entry: { // 入口
+        "carrouse-circle": path.resolve(__dirname, './src/index.tsx')
+    },
     output: {
-        filename: "CarrouseWj.js",
+        filename: "[name].min.js",
         path: path.resolve(__dirname, 'dist'),
-        library: 'CarrouseWj',
-        libraryTarget: "umd"
+        library: 'carrouse-circle',
+        libraryTarget: "umd",
+        publicPath: "./dist/",
+        libraryExport: 'default', // 默认导出
     },
     mode:"production", //"production","development"
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
-
     devServer: {
         contentBase: './dist'
     },
+
     resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx"]
     },
     module: {
@@ -35,7 +38,8 @@ module.exports = {
             },
             {
                 test: /\.ts(x?)$/,
-                exclude: /node_modules/,
+                exclude: path.resolve(__dirname, "./src/"),
+
                 use: [
                     {
                         loader: "ts-loader"

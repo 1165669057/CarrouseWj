@@ -1,9 +1,10 @@
 {
-  "name": "CarrouseWj",
-  "version": "1.0.0",
-  "main": "dist/CarrouseWj.js",
-  "author": "wj",
+  "name": "carrouse-circle",
+  "version": "1.0.3",
+  "main": "dist/carrouse-circle.min.js",
+  "author": "die_code_wang",
   "license": "MIT",
+  "repository": "https://github.com/1165669057/CarrouseWj.git",
   "dependencies": {
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
